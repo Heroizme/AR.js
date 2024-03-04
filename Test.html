@@ -27,12 +27,32 @@
   AFRAME.registerComponent('markerhandler', {
     init: function () {
       this.el.sceneEl.addEventListener('markerFound', () => {
-        alert("Got it.");
+        document.getElementsByClassName("vv")[0].style.display = "";
       });
   }})
+  
+  var closeBtn = document.getElementById("closeBtn");
+  closeBtn.onclick = (() => 
+  {
+	document.getElementsByClassName("vv")[0].style.display = "none";
+  });
 </script>
 
 <body style="margin : 0px; overflow: hidden;">
+<div class="vv" style="
+    /* display: none; */
+    background-color: black;
+    width: 100%;
+    height: 100%;
+">
+    <video src="https://media.w3.org/2010/05/sintel/trailer.mp4" style="
+    width: 100%;
+    /* height: 100%; */
+" controls=""></video>
+<button id="closeBtn" style="
+    width: 80px;
+    height: 30px;
+">关闭</button></div>
   <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
