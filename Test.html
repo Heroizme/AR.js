@@ -31,16 +31,11 @@
       });
   }})
   
-  var closeBtn = document.getElementById("closeBtn");
-  closeBtn.onclick = (() => 
-  {
-	document.getElementsByClassName("vv")[0].style.display = "none";
-  });
 </script>
 
 <body style="margin : 0px; overflow: hidden;">
 <div class="vv" style="
-    /* display: none; */
+    display: none; 
     background-color: black;
     width: 100%;
     height: 100%;
@@ -74,4 +69,16 @@
     <a-entity camera></a-entity>
   </a-scene>
 </body>
+<script>  
+
+	window.onload = (() =>
+	{
+		var closeBtn = document.getElementById("closeBtn");
+		closeBtn.onclick = (() => 
+		{
+			document.getElementsByClassName("vv")[0].style.display = "none";
+		});
+	});
+</script>
+
 </html>
